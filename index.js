@@ -15,7 +15,9 @@ app.use((req, res, next) => {
 	res.setHeader('Access-Control-Allow-Headers', 'content-type');
 	next();
 });
-
+app.use('/', (req, res) => {
+	res.send('Welcome');
+});
 app.use('/api/zomato', restaurantRoute);
 app.use('/api/auth', authRoute);
 app.use(errorHandler);
